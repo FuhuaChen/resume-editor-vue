@@ -52,7 +52,14 @@ div[v-cloak]{display: none;}
     border: 1px solid grey;
     margin-top: 10px;
     padding: 5px 10px;
+    position: relative;
 }
+.resume .skills > ul > li .remove{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+
 .resume .projects{}
 .resume .projects > ol{}
 .resume .projects > ol > li{

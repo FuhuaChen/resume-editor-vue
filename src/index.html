@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="down">
-            <button @click="onLogout">登出</button>
+            <button @click="onLogout" v-show="hasLogin()">登出</button>
         </div>
     </aside>
     <main>
@@ -45,22 +45,14 @@
             <section class="skills">
                 <h2>技能</h2>
                 <ul>
-                    <li>
-                        <span class="name">HTML5&CSS3</span>
-                        <div class="description">熟悉HTML语义化、1：1还原设计稿</div>
+                    <li v-for="skill,index in resume.skills">
+                        <editable-span :value="resume.skills[index].name" @edit="onEdit(`skills[${index}].name`,$event)"></editable-span>
+                        <div class="description">
+                            <editable-span :value="resume.skills[index].description" @edit="onEdit(`skills[${index}].description`,$event)"></editable-span>
+                        </div>
+                        <span class="remove" @click="removeSkill(index)" v-if="index>=4">X</span>
                     </li>
-                    <li>
-                        <span class="name">HTML5&CSS3</span>
-                        <div class="description">熟悉HTML语义化、1：1还原设计稿</div>
-                    </li>
-                    <li>
-                        <span class="name">HTML5&CSS3</span>
-                        <div class="description">熟悉HTML语义化、1：1还原设计稿</div>
-                    </li>
-                    <li>
-                        <span class="name">HTML5&CSS3</span>
-                        <div class="description">熟悉HTML语义化、1：1还原设计稿</div>
-                    </li>
+                    <li><span class="add" @click="addSkill">添加</span></li>
                 </ul>
             </section>
             <section class="projects">
