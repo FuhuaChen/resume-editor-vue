@@ -50,7 +50,10 @@ let app = new Vue({
     watch:{
         'currentUser.objectId':function (newvalue) {
             if(newvalue){
-                this.getResume(this.currentUser)
+                this.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
+                this.getResume(this.currentUser).then((resume)=>{
+                    this.resume = resume
+                })
             }
         }
     },
@@ -160,10 +163,6 @@ let app = new Vue({
 let currentUser = AV.User.current()
 if(currentUser){
     app.currentUser = currentUser.toJSON()
-    app.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
-    app.getResume(app.currentUser).then((resume)=>{
-        app.resume = resume
-    })
 }
 
 // //获取预览用户userId
