@@ -63,25 +63,27 @@ div[v-cloak]{display: none;}
 .resume .projects{}
 .resume .projects > ol{}
 .resume .projects > ol > li{
-    margin: 20px 0;
+    margin: 30px 0;
     border: 1px solid #ddd;
     padding: 10px;
 }
 .resume .projects header{
     display: flex;
+    align-items: center;
     justify-content: space-between;
+}
+.resume .projects header .name{
+    margin-right: 1em;
 }
 .resume .projects header .start{
     display: flex;
-}
-.resume .projects header h3{
-    margin-right: 1em;
+    align-items: center;
 }
 
 
 
 .editableSpan{position: relative;}
-.editableSpan button{display: none;position: absolute;left: 100%;z-index: 1;}
+.editableSpan button{display: none;position: absolute;left: 100%;top:0;z-index: 1;}
 .editableSpan:hover button{display: inline-block;}
 
 
