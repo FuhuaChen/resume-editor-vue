@@ -3,6 +3,9 @@ let app = new Vue({
     data: {
         loginVisible:false,
         signUpVisible:false,
+        shareVisible:false,
+        previewVisible:false,
+        previewResume:{},
         resume: {
             name: '姓名',
             gender: '男',
@@ -21,8 +24,11 @@ let app = new Vue({
                 {name:'请填写项目名称',link:'https://github.com/FuhuaChen',keywords:'清填写关键词',description:'清填写项目描述'}
             ]
         },
+        previewUser:{
+            objectId:undefined
+        },
         currentUser:{
-            objectId:'',
+            objectId:undefined,
             email:''
         },
         signUp:{
@@ -32,25 +38,44 @@ let app = new Vue({
         login:{
             email:'',
             password:''
+        },
+        shareLink:'',
+        mode:'edit'
+    },
+    computed:{
+        displayResume(){
+            return this.mode === 'edit' ? this.resume : this.previewResume
+        }
+    },
+    watch:{
+        'currentUser.objectId':function (newvalue) {
+            if(newvalue){
+                this.getResume(this.currentUser)
+            }
         }
     },
     methods: {
+        share(){
+
+        },
         hasLogin(){
             return !!this.currentUser.objectId
         },
-        getResume(){
+        getResume(user){
             let query = new AV.Query('User')
-            query.get(this.currentUser.objectId).then((user) => {
-                this.resume = user.toJSON().resume
-            }, (error) => {
-            })
+            return query.get(user.objectId).then((user) => {
+                return resume = user.toJSON().resume
+            }, (error) => {})
         },
         saveResume(){
             let {objectId} = AV.User.current().toJSON()
             let user = AV.Object.createWithoutData('User', objectId)
             user.set('resume', this.resume)
-            user.save()
-            alert('保存成功')
+            user.save().then(()=>{
+                alert('保存成功')
+            },()=>{
+                alert('保存失败')
+            })
         },
         onLogout(){
             AV.User.logOut()
@@ -83,7 +108,6 @@ let app = new Vue({
                 this.currentUser.objectId = User.objectId
                 this.currentUser.email = User.email
                 this.loginVisible = false
-                window.location.reload()
             },(error) => {
                 console.log(error.code)
                 if(error.code === 211){
@@ -112,8 +136,7 @@ let app = new Vue({
             let currentUser = AV.User.current()
             if (!currentUser) {
                 this.loginVisible = true
-            }
-            else {
+            } else {
                 this.saveResume()
             }
         },
@@ -132,8 +155,27 @@ let app = new Vue({
     }
 })
 
+
+//获取当前用户
 let currentUser = AV.User.current()
 if(currentUser){
     app.currentUser = currentUser.toJSON()
-    app.getResume()
+    app.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
+    app.getResume(app.currentUser).then((resume)=>{
+        app.resume = resume
+    })
+}
+
+// //获取预览用户userId
+let search = location.search
+let regex = /user_id=([^&]+)/
+let matches = search.match(regex)
+let userId
+if(matches){
+    userId = matches[1]
+    app.mode = 'preview'
+    app.previewVisible = 'true'
+    app.getResume({objectId:userId}).then((resume)=>{
+        app.previewResume = resume
+    })
 }

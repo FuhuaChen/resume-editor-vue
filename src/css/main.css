@@ -123,3 +123,35 @@ div[v-cloak]{display: none;}
     min-width: 300px;
     min-height: 400px;
 }
+
+
+.share{
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.share > .warpper{
+    background: white;
+    min-width: 400px;
+    padding: 20px 30px;
+}
+.share > .warpper > textarea{
+    width: 100%;
+    height: 4em;
+    resize: none;
+    word-break: break-all;
+}
+
+
+.exitPrview{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
