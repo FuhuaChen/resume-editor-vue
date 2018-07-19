@@ -58,6 +58,9 @@ let app = new Vue({
         }
     },
     methods: {
+        print(){
+            window.print()
+        },
         share(){
 
         },

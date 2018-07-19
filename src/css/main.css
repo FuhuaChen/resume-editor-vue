@@ -3,7 +3,7 @@
 button{font:inherit;}
 a{ text-decoration: none; color: inherit; }
 ol, ul{ list-style: none; }
-div[v-cloak]{display: none;}
+*[v-cloak]{display: none;}
 @media (min-width: 500px){
     .page{
         height: 100vh;
