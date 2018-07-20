@@ -35,10 +35,6 @@ let app = new Vue({
             email:'',
             password:''
         },
-        login:{
-            email:'',
-            password:''
-        },
         shareLink:'',
         mode:'edit'
     },
@@ -48,11 +44,11 @@ let app = new Vue({
         }
     },
     watch:{
-        'currentUser.objectId':function (newvalue) {
-            if(newvalue){
+        'currentUser.objectId':function (newValue) {
+            if(newValue){
                 this.shareLink = location.origin + location.pathname + '?user_id=' + app.currentUser.objectId
                 this.getResume(this.currentUser).then((resume)=>{
-                    this.resume = resume
+                    Object.assign(this.resume,resume)
                 })
             }
         }
@@ -88,55 +84,23 @@ let app = new Vue({
             alert('注销成功')
             window.location.reload()
         },
-        onSignUp(){
-            let user = new AV.User()
-            user.setUsername(this.signUp.email)
-            user.setPassword(this.signUp.password)
-            user.setEmail(this.signUp.email)
-            user.signUp().then((user) => {
-                alert('注册成功')
-                let User = user.toJSON()
-                this.currentUser.objectId = User.objectId
-                this.currentUser.email = User.email
-                this.signUpVisible = false
-            },(error) => {
-                console.log(error.code)
-                if(error.code === 125){
-                    alert('邮箱错误')
-                }else if(error.code === 203){
-                    alert('邮箱已被占用')
-                }
-            })
+        onLogin(user){
+            this.currentUser.objectId = user.objectId
+            this.currentUser.email = user.email
+            this.loginVisible = false
         },
-        onLogin(){
-            AV.User.logIn(this.login.email, this.login.password).then((user) => {
-                let User = user.toJSON()
-                this.currentUser.objectId = User.objectId
-                this.currentUser.email = User.email
-                this.loginVisible = false
-            },(error) => {
-                console.log(error.code)
-                if(error.code === 211){
-                    alert('邮箱不存在')
-                }else if(error.code === 210) {
-                    alert('邮箱和密码不匹配')
-                }
-            })
+        goToLogin(){
+            this.signUpVisible = false
+            this.loginVisible = true
         },
-        onEdit(key, value) {
-            let regex = /\[(\d+)\]/g
-            key = key.replace(regex,(match,number) => {
-                return '.' + number
-            })
-            keys = key.split('.')
-            let result = this.resume
-            for(let i=0;i<keys.length;i++){
-                if(i===keys.length-1){
-                    result[keys[i]] = value
-                }else{
-                    result = result[keys[i]]
-                }
-            }
+        goToSignUp(){
+            this.loginVisible = false
+            this.signUpVisible = true
+        },
+        onSignUp(User){
+            this.currentUser.objectId = User.objectId
+            this.currentUser.email = User.email
+            this.signUpVisible = false
         },
         onClickSave(){
             let currentUser = AV.User.current()
@@ -146,18 +110,6 @@ let app = new Vue({
                 this.saveResume()
             }
         },
-        addSkill(){
-            this.resume.skills.push({name: '请填写技能名称',description:'请填写技能描述'})
-        },
-        removeSkill(index){
-            this.resume.skills.splice(index,1)
-        },
-        addProject(){
-            this.resume.projects.push({name:'请填写项目名称',link:'https://github.com/FuhuaChen',keywords:'清填写关键词',description:'清填写项目描述'})
-        },
-        removeProject(index){
-            this.resume.projects.splice(index,1)
-        }
     }
 })
 
