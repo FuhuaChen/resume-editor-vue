@@ -11,6 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "leancloud-storage": "^3.8.0",
-    "vue": "^2.5.16"
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   }
 }

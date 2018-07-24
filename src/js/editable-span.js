@@ -1,4 +1,4 @@
-Vue.component('editable-span', {
+let editableSpan = {
     props: ['value','disabled'],
     data() {
         return {
@@ -17,4 +17,5 @@ Vue.component('editable-span', {
             <button v-if ="!disabled" @click="editing=!editing">edit</button>
         </span>
 `
-})
+}
+Vue.component('editable-span',editableSpan)

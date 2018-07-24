@@ -1,4 +1,5 @@
-Vue.component('sign-up',{
+Vue.use(Vuex)
+let signUp={
     data(){
         return{
             signUp:{
@@ -16,7 +17,8 @@ Vue.component('sign-up',{
             user.signUp().then((user) => {
                 alert('注册成功')
                 let User = user.toJSON()
-                this.$emit('sign-up',User)
+                this.$store.commit('saveCurrentUser',User)
+                this.$router.push('/')
             },(error) => {
                 console.log(error.code)
                 if(error.code === 125){
@@ -25,9 +27,6 @@ Vue.component('sign-up',{
                     alert('邮箱已被占用')
                 }
             })
-        },
-        onClickLogin(){
-            this.$emit('gotologin')
         }
     },
     template:`
@@ -36,7 +35,7 @@ Vue.component('sign-up',{
                 <h2>
                     注册
                 </h2>
-                <button type="button" @click="$emit('close')">关闭</button>
+                <router-link to="/">关闭</router-link>
                 <div class="row">
                     <label>
                         邮箱
@@ -52,9 +51,10 @@ Vue.component('sign-up',{
                 <div class="actions">
                     <button type="submit">提交</button>
                 </div>
-                <a href="#" @click="onClickLogin">登陆</a>
+                <router-link to="/login">登陆</router-link>
             </form>
         </div>
 
     `
-})
+}
+Vue.component('sign-up',signUp)

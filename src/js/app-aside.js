@@ -1,17 +1,17 @@
-Vue.component('app-aside',{
+let aside={
     props:['logoutVisible','previewVisible'],
     template:`
         <aside>
             <div class="upper">
                 <ul>
                     <li>
-                        <button @click="$emit('click-save')">保存</button>
+                        <button @click="$emit('save')">保存</button>
                     </li>
                     <li>
                         <button @click="$emit('print')">打印</button>
                     </li>
                     <li>
-                        <button @click="$emit('share')">分享</button>
+                        <router-link to="/share">分享</router-link>
                     </li>
                     <li v-show="previewVisible">
                         <button @click="$emit('preview')" v-cloak>返回预览</button>
@@ -23,4 +23,5 @@ Vue.component('app-aside',{
             </div>
         </aside>
     `
-})
+}
+Vue.component('app-aside',aside)

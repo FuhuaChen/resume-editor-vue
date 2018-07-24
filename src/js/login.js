@@ -1,4 +1,5 @@
-Vue.component('login',{
+Vue.use(Vuex)
+let login={
     data(){
         return{
             login:{
@@ -11,7 +12,8 @@ Vue.component('login',{
         onLogin(){
             AV.User.logIn(this.login.email, this.login.password).then((user) => {
                 let User = user.toJSON()
-                this.$emit('login',User)
+                this.$store.commit('saveCurrentUser',User)
+                this.$router.push('/')
             },(error) => {
                 console.log(error.code)
                 if(error.code === 211){
@@ -20,11 +22,7 @@ Vue.component('login',{
                     alert('邮箱和密码不匹配')
                 }
             })
-        },
-        onClickSignUp(){
-            this.$emit('gotosignup')
         }
-
     },
     template:`
         <div class="login" v-cloak>
@@ -32,7 +30,7 @@ Vue.component('login',{
                 <h2>
                     登陆
                 </h2>
-                <button type="button" @click="$emit('close')">关闭</button>
+                <router-link to="/">关闭</router-link>
                 <div class="row">
                     <label>
                         邮箱
@@ -48,8 +46,9 @@ Vue.component('login',{
                 <div class="actions">
                     <button type="submit">提交</button>
                 </div>
-                <a href="#" @click="onClickSignUp">注册</a>
+                <router-link to="/signUp">注册</router-link>
             </form>
         </div>
     `
-})
+}
+Vue.component('login',login)
