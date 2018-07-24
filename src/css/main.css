@@ -1,5 +1,13 @@
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
 *{ padding: 0; margin: 0; }
 *, *::before, *::after{ box-sizing: border-box; }
+input{outline: none; border: none; border-bottom: 2px solid #F0F0F0;font: inherit;}
 button{font:inherit;}
 a{ text-decoration: none; color: inherit; }
 ol, ul{ list-style: none; }
@@ -88,41 +96,6 @@ ol, ul{ list-style: none; }
 
 
 
-.login{
-    position: fixed;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.login > .form{
-    background: white;
-    min-width: 300px;
-    min-height: 400px;
-}
-
-
-
-.signUp{
-    position: fixed;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.signUp > .form{
-    background: white;
-    min-width: 300px;
-    min-height: 400px;
-}
 
 
 .share{

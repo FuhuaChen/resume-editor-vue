@@ -35,23 +35,23 @@ let signUp={
                 <h2>
                     注册
                 </h2>
-                <router-link to="/">关闭</router-link>
-                <div class="row">
-                    <label>
-                        邮箱
-                    </label>
-                    <input type="text" v-model="signUp.email">
+                <router-link to="/">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-remove"></use>
+                    </svg>
+                </router-link>
+                <div class="wrapper">
+                    <div class="row">
+                        <input type="text" v-model="signUp.email" placeholder="邮箱">
+                    </div>
+                    <div class="row">
+                        <input type="password" v-model="signUp.password" placeholder="密码">
+                    </div>
+                    <div class="actions">
+                        <button type="submit">注册</button>
+                    </div>
+                    <router-link class="loginButton" to="/login">登录</router-link>
                 </div>
-                <div class="row">
-                    <label>
-                        密码
-                    </label>
-                    <input type="password" v-model="signUp.password">
-                </div>
-                <div class="actions">
-                    <button type="submit">提交</button>
-                </div>
-                <router-link to="/login">登陆</router-link>
             </form>
         </div>
 

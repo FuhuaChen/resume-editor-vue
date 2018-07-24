@@ -30,8 +30,8 @@ let store = new Vuex.Store({
                 {name: '请填写技能名称', description: '请填写技能描述'}
             ],
             projects: [
-                {name: '请填写项目名称', link: 'https://github.com/FuhuaChen', keywords: '清填写关键词', description: '清填写项目描述'},
-                {name: '请填写项目名称', link: 'https://github.com/FuhuaChen', keywords: '清填写关键词', description: '清填写项目描述'}
+                {name: '请填写项目名称', link: '清填写项目链接', keywords: '清填写关键词', description: '清填写项目描述'},
+                {name: '请填写项目名称', link: '清填写项目链接', keywords: '清填写关键词', description: '清填写项目描述'}
             ]
         },
         previewUser: {
@@ -68,7 +68,7 @@ let store = new Vuex.Store({
             state.resume.skills.splice(index,1)
         },
         addProject(state){
-            state.resume.projects.push({name:'请填写项目名称',link:'https://github.com/FuhuaChen',keywords:'清填写关键词',description:'清填写项目描述'})
+            state.resume.projects.push({name:'请填写项目名称',link:'清填写项目链接',keywords:'清填写关键词',description:'清填写项目描述'})
         },
         removeProject(state,index){
             state.resume.projects.splice(index,1)
