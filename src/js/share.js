@@ -6,11 +6,15 @@ let share={
         }
     },
     template:`
-        <div class="share" v-cloak>
+    <div class="share" v-cloak>
         <div class="warpper">
             <h2>分享链接</h2>
             <textarea readonly>{{shareLink}}</textarea>
-            <router-link to="/">关闭</router-link>
+            <router-link to="/">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-remove"></use>
+                </svg>
+            </router-link>
         </div>
     </div>
     `

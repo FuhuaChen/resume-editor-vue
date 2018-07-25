@@ -3,6 +3,11 @@ let aside={
     template:`
         <aside>
             <div class="upper">
+                <div class="logo-wrapper">
+                    <span class="logo">
+                        Resume-editor
+                    </span>
+                </div>
                 <ul>
                     <li>
                         <button @click="$emit('save')">保存</button>

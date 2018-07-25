@@ -19,10 +19,10 @@ let store = new Vuex.Store({
         resume: {
             name: '姓名',
             gender: '男',
-            birthday: '1992年7月',
+            birthday: '1990年1月',
             jobTitle: '前端工程师',
-            email: '874166712@qq.com',
-            phone: '18060912511',
+            email: '123456789@qq.com',
+            phone: '13111111111',
             skills: [
                 {name: '请填写技能名称', description: '请填写技能描述'},
                 {name: '请填写技能名称', description: '请填写技能描述'},
@@ -45,7 +45,7 @@ let store = new Vuex.Store({
             email: '',
             password: ''
         },
-        shareLink: '',
+        shareLink: '请先登录',
         mode: 'edit'
     },
     mutations: {

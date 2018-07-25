@@ -47,6 +47,7 @@
     background-color: black;
 }
 .signUp > .form >.wrapper .loginButton{
+    background-color: grey;
     margin-top: 10px;
     display: flex;
     justify-content: center;

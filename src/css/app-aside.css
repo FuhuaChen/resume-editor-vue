@@ -1,0 +1,53 @@
+.page aside{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 1px 5px 0 rgba(255, 255, 255, 0.5);
+    background: linear-gradient(to bottom, #11171C 0%,#2b2b2b 100%);
+}
+.page aside .upper{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.page aside .upper .logo-wrapper{
+    padding: 25px 0;
+    font-size: 20px;
+    color: white;
+    border-bottom: 3px solid white;
+}
+.page aside .upper ul{
+    font-size: 18px;
+    margin-top: 30px;
+}
+.page aside button,
+.page aside .upper > ul li > a{
+    padding: 10px 0;
+    border: none;
+    width:100%;
+    cursor: pointer;
+    color: white;
+    background-color: inherit;
+}
+.page aside .upper > ul li > a{
+    display: inline-block;
+}
+.page aside .upper > ul li:hover{
+    background-color: white;
+}
+.page aside .upper > ul li:hover button,
+.page aside .upper > ul li:hover a{
+    color: black;
+}
+.page aside .down button{
+    border-top: 3px solid white;
+    padding: 25px 0;
+    font-size: 20px;
+}
+.page aside .down button:hover{
+    background-color: white;
+    color: black;
+}
