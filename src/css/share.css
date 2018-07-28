@@ -1,0 +1,35 @@
+.share{
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.share > .wrapper{
+    border-radius: 4px;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    background: white;
+    min-width: 400px;
+    padding: 20px 30px;
+    position: relative;
+}
+.share > .wrapper > textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 4em;
+    resize: none;
+    word-break: break-all;
+}
+.share > .wrapper svg{
+    width: 20px;
+    height: 20px;
+    color: white;
+    position: absolute;
+    top: 5px;
+    right: -30px;
+}

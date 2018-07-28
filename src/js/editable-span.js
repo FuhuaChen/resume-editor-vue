@@ -3,7 +3,7 @@ let editableSpan = {
     props: ['value'],
     data() {
         return {
-            editing: false
+            editing: false,
         }
     },
     methods: {

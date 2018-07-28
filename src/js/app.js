@@ -42,7 +42,7 @@ App={
         <main>
             <resume :display-resume="displayResume" :resume="$store.state.resume"></resume>
         </main>
-        <button class="exitPrview" @click="$store.state.mode='edit'" v-if="$store.state.mode==='preview'" v-cloak>退出预览</button>
+        <button class="exitPreview" @click="$store.state.mode='edit'" v-if="$store.state.mode==='preview'" v-cloak>退出预览</button>
     </div>
     `
 }

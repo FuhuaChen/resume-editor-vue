@@ -15,7 +15,24 @@ let store = new Vuex.Store({
         signUpVisible: false,
         shareVisible: false,
         previewVisible: false,
-        previewResume: {},
+        previewResume: {
+            name: '姓名',
+            gender: '男',
+            birthday: '1990年1月',
+            jobTitle: '前端工程师',
+            email: '123456789@qq.com',
+            phone: '13111111111',
+            skills: [
+                {name: '请填写技能名称', description: '请填写技能描述'},
+                {name: '请填写技能名称', description: '请填写技能描述'},
+                {name: '请填写技能名称', description: '请填写技能描述'},
+                {name: '请填写技能名称', description: '请填写技能描述'}
+            ],
+            projects: [
+                {name: '请填写项目名称', link: '请填写项目链接', keywords: '请填写关键词', description: '请填写项目描述'},
+                {name: '请填写项目名称', link: '请填写项目链接', keywords: '请填写关键词', description: '请填写项目描述'}
+            ]
+        },
         resume: {
             name: '姓名',
             gender: '男',
@@ -30,8 +47,8 @@ let store = new Vuex.Store({
                 {name: '请填写技能名称', description: '请填写技能描述'}
             ],
             projects: [
-                {name: '请填写项目名称', link: '清填写项目链接', keywords: '清填写关键词', description: '清填写项目描述'},
-                {name: '请填写项目名称', link: '清填写项目链接', keywords: '清填写关键词', description: '清填写项目描述'}
+                {name: '请填写项目名称', link: '请填写项目链接', keywords: '请填写关键词', description: '请填写项目描述'},
+                {name: '请填写项目名称', link: '请填写项目链接', keywords: '请填写关键词', description: '请填写项目描述'}
             ]
         },
         previewUser: {
@@ -59,7 +76,7 @@ let store = new Vuex.Store({
             Object.assign(state.resume,resume)
         },
         saveCurrentPreviewResume(state,resume){
-            state.previewResume=resume
+            Object.assign(state.previewResume,resume)
         },
         addSkill(state){
             state.resume.skills.push({name: '请填写技能名称',description:'请填写技能描述'})

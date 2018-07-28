@@ -1,0 +1,140 @@
+.resume{
+    max-width: 800px;
+    margin: 0 auto;
+}
+.resume > section{ margin: 50px 0; }
+.resume > section h1{ text-align: center; margin: 20px 0;}
+.resume > section h2{ text-align: center; margin: 20px 0;}
+.resume .profile{ text-align: center;}
+.resume .profile ul{
+    padding-top: 5px;
+    display: flex;
+    justify-content: center;
+}
+.resume .profile ul > li{
+    padding: 0 5px;
+}
+
+
+.resume .skills{}
+.resume .skills > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.resume .skills > ul > li {
+    width: 48%;
+    border: 1px solid #808080;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px 0;
+    position: relative;
+}
+.resume .skills > ul > li .skillName {
+    color: white;
+    background-color: #808080;
+    padding: 20px;
+}
+.resume .skills > ul > li .description {
+    padding: 20px;
+}
+.resume .skills > ul > li .description input {
+    width: 100%;
+}
+.resume .skills > ul > li .remove{
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+.resume .skills > ul > li .remove svg{
+    color: white;
+}
+.resume .skills > ul > li .remove:hover svg{
+    color: black;
+}
+.resume .skills > ul > li.add{
+    width: 100%;
+    text-align: center;
+}
+.resume .skills > ul > li.add button{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+.resume .skills > ul > li.add:hover button{
+    background-color: #808080;
+    color: white;
+}
+
+.resume .projects{}
+.resume .projects > ol{}
+.resume .projects > ol > li{
+    border: 1px solid #808080;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    margin: 30px 0;
+    position: relative;
+
+}
+.resume .projects > ol > li header{
+    display: flex;
+    flex-direction: column;
+}
+.resume .projects > ol > li header .name{
+}
+.resume .projects > ol > li header .start{
+    color: white;
+    background-color: #808080;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.resume .projects > ol > li header .end{
+    padding: 20px;
+}
+.resume .projects > ol > li header .end input{
+    width: 100%;
+}
+.resume .projects > ol > li .description{
+    padding: 0 20px 20px;
+}
+.resume .projects > ol > li .description input{
+    width: 100%;
+}
+.resume .projects > ol > li .remove{
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    right: 5px;
+}
+.resume .projects > ol > li .remove svg{
+    color: white;
+}
+.resume .projects > ol > li .remove:hover svg{
+    color: black;
+}
+.resume .projects > ol > li.add{
+    width: 100%;
+    text-align: center;
+}
+.resume .projects > ol > li.add button{
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+}
+.resume .projects > ol > li.add:hover button{
+    background-color: #808080;
+    color: white;
+}

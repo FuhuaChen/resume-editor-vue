@@ -19,6 +19,10 @@
     color: white;
     border-bottom: 3px solid white;
 }
+.page aside .upper .logo-wrapper:hover{
+    background-color: white;
+    color: black;
+}
 .page aside .upper ul{
     font-size: 18px;
     margin-top: 30px;

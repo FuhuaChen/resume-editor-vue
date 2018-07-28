@@ -7,7 +7,7 @@
 
 *{ padding: 0; margin: 0; outline: none;}
 *, *::before, *::after{ box-sizing: border-box; }
-input{outline: 2px solid #F0F0F0; border: none; font: inherit;}
+input{outline: 2px solid #d0d0d0; border: none; font: inherit;}
 button{font:inherit;}
 a{ text-decoration: none; color: inherit; }
 ol, ul{ list-style: none; }
@@ -20,109 +20,17 @@ ol, ul{ list-style: none; }
     }
 }
 
-
 .page main{
     flex: 1;
     overflow: auto;
 }
-
-
-
-.resume{
-    max-width: 800px;
-    margin: 0 auto;
-}
-.resume > section{ margin: 50px 0; }
-.resume > section h1{ text-align: center; margin: 20px 0;}
-.resume > section h2{ text-align: center; margin: 20px 0;}
-.resume .profile{ text-align: center; }
-.resume .skills{
-
-}
-.resume .skills > ul{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-.resume .skills > ul > li {
-    width: 48%;
-    border: 1px solid grey;
-    margin-top: 10px;
-    padding: 5px 10px;
-    position: relative;
-}
-.resume .skills > ul > li .remove{
-    position: absolute;
-    top: 2px;
-    right: 5px;
-}
-
-.resume .projects{}
-.resume .projects > ol{}
-.resume .projects > ol > li{
-    margin: 30px 0;
-    border: 1px solid #ddd;
-    padding: 10px;
-}
-.resume .projects header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.resume .projects header .name{
-    margin-right: 1em;
-}
-.resume .projects header .start{
-    display: flex;
-    align-items: center;
-}
-
-
 
 .editableSpan > span{
     border-bottom: 2px solid transparent;
 }
 
 
-
-.share{
-    position: fixed;
-    background: rgba(0,0,0,0.3);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.share > .warpper{
-    border-radius: 2px;
-    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
-    background: white;
-    min-width: 400px;
-    padding: 20px 30px;
-    position: relative;
-}
-.share > .warpper > textarea{
-    margin-top: 10px;
-    width: 100%;
-    height: 4em;
-    resize: none;
-    word-break: break-all;
-}
-.share > .warpper svg{
-    width: 20px;
-    height: 20px;
-    color: white;
-    position: absolute;
-    top: 5px;
-    right: -30px;
-}
-
-
-.exitPrview{
+.exitPreview{
     position: fixed;
     top: 20px;
     left: 20px;

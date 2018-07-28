@@ -7,7 +7,7 @@ let share={
     },
     template:`
     <div class="share" v-cloak>
-        <div class="warpper">
+        <div class="wrapper">
             <h2>分享链接</h2>
             <textarea readonly>{{shareLink}}</textarea>
             <router-link to="/">
