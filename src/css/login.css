@@ -53,6 +53,11 @@
     align-items: center;
     background-color: grey;
 }
+.login > .form >.wrapper button:hover,
+.login > .form >.wrapper .signUpButton:hover{
+    background-color: white;
+    color: black;
+}
 .login > .form svg{
     width: 20px;
     height: 20px;

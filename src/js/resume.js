@@ -19,7 +19,7 @@ let resume={
         }
     },
     template:`
-            <div class="resume">
+        <div class="resume">
             <section class="profile">
                 <h1>
                     <editable-span  :value="displayResume.name" @edit="onEdit('name',$event)"></editable-span>

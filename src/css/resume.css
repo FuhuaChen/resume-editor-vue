@@ -32,6 +32,7 @@
 }
 .resume .skills > ul > li .skillName {
     color: white;
+    border-bottom: 1px solid #808080;
     background-color: #808080;
     padding: 20px;
 }
@@ -87,6 +88,7 @@
     flex-direction: column;
 }
 .resume .projects > ol > li header .name{
+    border-bottom: 1px solid #808080;
 }
 .resume .projects > ol > li header .start{
     color: white;
