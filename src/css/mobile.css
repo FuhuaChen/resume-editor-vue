@@ -1,0 +1,22 @@
+.resume .profile ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+.page .exitPreview{
+    display: none;
+}
+.resume .skills > ul > li {
+    width: 100%;
+    margin: 10px 20px;
+}
+.resume .projects > ol > li{
+    margin: 20px 20px;
+}
+.resume .projects > ol > li header .start{
+    flex-direction: column;
+    text-align: center;
+}
+.resume .projects > ol > li header .start h3{
+    margin-bottom: 5px;
+}
+
