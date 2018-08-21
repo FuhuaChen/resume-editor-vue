@@ -91,7 +91,7 @@ let resume={
                         <div class="description">
                             <editable-span  :value="project.description" @edit="onEdit('projects['+index+'].description',$event)"></editable-span>
                         </div>
-                        <span class="remove" @click="$store.commit('removeProjetc',index)" v-if="index>=2&&$store.state.mode==='edit'">
+                        <span class="remove" @click="$store.commit('removeProject',index)" v-if="index>=2&&$store.state.mode==='edit'">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-remove"></use>
                             </svg>
